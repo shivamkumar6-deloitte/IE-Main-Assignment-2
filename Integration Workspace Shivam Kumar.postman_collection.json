@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "a74420bf-312a-4513-811d-484d5db2137d",
+		"name": "Integration Workspace Shivam Kumar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Milestone 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://mainassignment2shivamkumar-bjzd.us-e2.cloudhub.io/milestone1",
+					"protocol": "http",
+					"host": [
+						"mainassignment2shivamkumar-bjzd",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"milestone1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "milestone 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"the status code be 201\", function(){\r",
+							"    pm.response.to.have.status(201)\r",
+							"});\r",
+							"pm.test(\"Content-Type is there or not\", function(){\r",
+							"  pm.response.to.have.header(\"Content-Type\");\r",
+							"});\r",
+							"pm.test(\"expected response time should be <=1000\", function(){\r",
+							"    var expectedTimer = 1001\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(expectedTimer);\r",
+							"} );\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"post_id\": 2003 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://mainassignment2shivamkumar-bjzd.us-e2.cloudhub.io/milestone2",
+					"protocol": "http",
+					"host": [
+						"mainassignment2shivamkumar-bjzd",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"milestone2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "milestone 3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://mainassignment2shivamkumar-bjzd.us-e2.cloudhub.io/milestone3",
+					"protocol": "http",
+					"host": [
+						"mainassignment2shivamkumar-bjzd",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"milestone3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

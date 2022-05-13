@@ -1,0 +1,82 @@
+#%RAML 1.0
+title: IE-Main-Assignment-Shivam-Kumar
+types:
+  GET-milestone1:
+    items:
+      properties:
+        id:
+          example: 23232
+          type: number
+          format: int
+        email:
+          example: kartik_kocchar@rutherford.io
+          type: string
+        gender:
+          example: female
+          type: string
+        status:
+          example: active
+          type: string
+  POST-milestone2-response:
+    properties:
+      Userdetails:
+        items:
+          properties:
+            post_id:
+              example: 1223
+              type: number
+              format: int
+            id:
+              example: 42
+              type: number
+              format: int
+            name:
+              example: Bhaaswar Pothuvaal III
+              type: string
+  POST-milestone2-req:
+    properties:
+      post_id:
+        example: 1223
+        type: number
+        format: int
+  GET-milestone3:
+    properties:
+      Name:
+        example: Gorakhanatha Chaturvedi
+        type: string
+      Status:
+        example: inactive
+        type: string
+      Gender:
+        example: female
+        type: string
+mediaType:
+  - application/json
+protocols:
+  - HTTP
+/milestone1:
+  get:
+    responses:
+      "200":
+        body:
+          application/json:
+            type: GET-milestone1
+            items:
+              type: object
+/milestone2:
+  put:
+    body:
+      application/json:
+        type: POST-milestone2-req
+    responses:
+      "201":
+        body:
+          application/json:
+            type: POST-milestone2-response
+/milestone3:
+  get:
+    responses:
+      "200":
+        body:
+          application/json:
+            type: GET-milestone3
